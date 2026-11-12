@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Juegos de {{ data.title }} | EduPlay{% endblock %}
+{% block content %}<a class="back-link" href="{{ url_for('subject',subject=key) }}">← Volver a {{ data.title }}</a>
+<section class="subject-hero"><span class="eyebrow">APRENDE JUGANDO</span><h1>🎮 Juegos de {{ data.title }}</h1><p>Actividades diseñadas para practicar los contenidos de esta materia.</p></section>
+<div class="games-grid">
+<a class="game-card purple" href="{{ url_for('subject_game',subject=key,game='memorama') }}"><span>🃏</span><h2>Memorama de {{ data.title }}</h2><p>Relaciona conceptos y encuentra las parejas correctas.</p><b>Jugar ahora →</b></a>
+<a class="game-card blue" href="{{ url_for('subject_game',subject=key,game='reto') }}"><span>{{ '🔤' if key=='lengua' else '🧮' }}</span><h2>{{ 'Reto de palabras' if key=='lengua' else 'Reto de cálculo' }}</h2><p>{{ 'Practica vocabulario y conceptos de Lengua.' if key=='lengua' else 'Resuelve operaciones matemáticas.' }}</p><b>Jugar ahora →</b></a>
+</div><a class="btn primary" href="{{ url_for('exam',subject=key) }}">📝 Presentar examen de {{ data.title }}</a>{% endblock %}

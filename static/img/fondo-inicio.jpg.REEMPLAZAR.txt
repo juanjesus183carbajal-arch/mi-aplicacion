@@ -1,0 +1,2 @@
+Guarda aquí tu imagen y nómbrala exactamente: fondo-inicio.jpg
+Ruta para CSS/HTML: static/img/fondo-inicio.jpg

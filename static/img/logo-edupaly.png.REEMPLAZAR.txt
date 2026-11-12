@@ -1,0 +1,2 @@
+Guarda aquí tu imagen y nómbrala exactamente: logo-edupaly.png
+Ruta para CSS/HTML: static/img/logo-edupaly.png

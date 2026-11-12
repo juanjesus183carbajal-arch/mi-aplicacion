@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Juegos | EduPlay{% endblock %}
+{% block content %}<section class="subject-hero"><span class="eyebrow">ZONA DE JUEGOS</span><h1>🎮 Elige tu materia</h1><p>Los juegos están separados por materia para practicar lo que estudiaste.</p></section>
+<div class="games-grid"><a class="game-card purple" href="{{ url_for('subject_games',subject='lengua') }}"><span>📚</span><h2>Juegos de Lengua</h2><p>Memorama de conceptos y reto de palabras.</p><b>Entrar →</b></a><a class="game-card blue" href="{{ url_for('subject_games',subject='matematicas') }}"><span>🔢</span><h2>Juegos de Matemáticas</h2><p>Memorama de operaciones y reto de cálculo.</p><b>Entrar →</b></a></div>{% endblock %}

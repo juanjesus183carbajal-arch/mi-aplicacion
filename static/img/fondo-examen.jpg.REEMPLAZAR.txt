@@ -1,0 +1,2 @@
+Guarda aquí tu imagen y nómbrala exactamente: fondo-examen.jpg
+Ruta para CSS/HTML: static/img/fondo-examen.jpg

@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}{{ lesson.title }} | EduPlay{% endblock %}{% block bodyclass %}{{ 'lengua-bg' if key=='lengua' else 'math-bg' }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('subject',subject=key) }}">← Volver a {{ data.title }}</a>
+<section class="topic-header"><span class="eyebrow">{{ data.title|upper }} · {{ lesson.level|upper }}</span><h1>{{ lesson.icon }} {{ lesson.title }}</h1><p>{{ lesson.intro }}</p></section>
+<article class="lesson-panel full-lesson">
+ <h2>📘 Explicación del tema</h2>
+ <ol>{% for line in lesson.explanation %}<li>{{ line }}</li>{% endfor %}</ol>
+ <div class="example"><b>💡 Ejemplo explicado</b><p>{{ lesson.example }}</p></div>
+ <h2>🎥 Video de apoyo</h2><p>Consulta videos educativos relacionados con este contenido.</p>
+ <a class="btn video-btn" href="{{ lesson.video }}" target="_blank" rel="noopener">▶ Buscar videos del tema</a>
+ <div class="lesson-next"><div><b>¿Ya estudiaste el tema?</b><p>Continúa con una actividad para comprobar lo que aprendiste.</p></div>
+ <a class="btn primary" href="{{ url_for('activity',subject=key,slug=lesson.slug) }}">Comprueba lo aprendido →</a></div>
+</article>{% endblock %}

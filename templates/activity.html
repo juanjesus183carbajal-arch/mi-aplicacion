@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Comprueba lo aprendido | EduPlay{% endblock %}
+{% block content %}<a class="back-link" href="{{ url_for('topic',subject=key,slug=lesson.slug) }}">← Volver a la explicación</a>
+<section class="subject-hero"><span class="eyebrow">ACTIVIDAD DE {{ data.title|upper }}</span><h1>🧠 Comprueba lo aprendido</h1><p>{{ lesson.title }} · Lee con atención y selecciona una respuesta.</p></section>
+<section class="practice-panel activity-panel"><span class="question-count">PREGUNTA 1 DE 1</span><h2>{{ lesson.question }}</h2>
+<form method="post">{% for answer in lesson.answers %}<label class="answer"><input type="radio" name="answer" value="{{ loop.index0 }}" required> {{ answer }}</label>{% endfor %}<button class="btn primary">Comprobar respuesta</button></form>
+{% if result is not none %}<div class="result {{ 'right' if result else 'wrong' }}">{% if result %}¡Excelente! Respuesta correcta. Ganaste 10 puntos. ⭐{% else %}Esta vez no fue correcta. Regresa a la explicación y vuelve a intentarlo.{% endif %}</div>{% endif %}
+<a class="back-link" href="{{ url_for('subject',subject=key) }}">Ver más temas →</a></section>{% endblock %}
